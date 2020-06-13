@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->double('income')->nullable(); // 年収
+            $table->integer('publication'); // 公開／非公開
             $table->rememberToken();
             $table->timestamps();
         });
