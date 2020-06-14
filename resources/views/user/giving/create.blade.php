@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>Givingの新規作成</h2>
-                <form action="{{ action('user\GivingController@create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('User\GivingController@create') }}" method="post" enctype="multipart/form-data">
                     <!-- error check -->
                     @if (count($errors) > 0)
                         <ul>
@@ -44,7 +44,7 @@
                     <div class="form-group row">
                         <div class="col-md-6">
                           <!-- {{ asset('/giving/index') }} -->
-                          <a href="" role="button" class="btn btn-outline-success">Givingの一覧</a>
+                          <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-success">Givingの一覧</a>
                           <!-- {{ asset('/profile/index') }} -->
                           <a href="" role="button" class="btn btn-outline-success">マイページ</a>
                         </div>

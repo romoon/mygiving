@@ -6,18 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Giving extends Model
 {
-  protected $table = 'my_giving.giving';
+  protected $table = 'giving';
 
   protected $fillable = ['id', 'date',  'giving', 'purpose', 'user_id'];
 
   protected $guarded = array('id');
 
   public static $rules = array(
-      'giving' => [ 'required', 'integer' ],
-      'user_id' => [ 'required', 'string' ],
-      'date' => 'string',
-      'purpose' => 'string',
-
+      'giving' => 'required',
+      'user_id' => 'required',
   );
 
   public function user()
