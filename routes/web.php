@@ -26,8 +26,8 @@ Route::get('/index', function () { return view('index'); });
 // User ログイン後
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('user/giving/create', 'user\GivingController@add')->name('user.giving.create');
-    Route::post('user/giving/create', 'user\GivingController@create')->name('user.giving.create');
+    Route::get('user/giving/create', 'User\GivingController@add')->name('user.giving.create');
+    Route::post('user/giving/create', 'User\GivingController@create')->name('user.giving.create');
 });
 
 // Admin 認証不要
