@@ -41,4 +41,9 @@ class User extends Authenticatable
         'email' => 'required',
         'password' => 'required',
     );
+
+    public function givings()
+    {
+      return $this->hasMany('App\Models\Giving');
+    }
 }
