@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('user/giving/create', 'User\GivingController@add');
     Route::post('user/giving/create', 'User\GivingController@create');
+    Route::get('user/giving/index', 'User\GivingController@index');
 });
 
 // Admin 認証不要

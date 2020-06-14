@@ -44,7 +44,7 @@
                     <div class="form-group row">
                         <div class="col-md-6">
                           <!-- {{ asset('/giving/index') }} -->
-                          <a href="" role="button" class="btn btn-outline-success">Givingの一覧</a>
+                          <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-success">Givingの一覧</a>
                           <!-- {{ asset('/profile/index') }} -->
                           <a href="" role="button" class="btn btn-outline-success">マイページ</a>
                         </div>

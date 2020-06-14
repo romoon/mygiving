@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Giving;
+use Illuminate\Support\Facades\DB;
 
 class GivingController extends Controller
 {
@@ -29,7 +30,18 @@ class GivingController extends Controller
 
   public function index(Request $request)
   {
-
+    $currentuser = \Auth::user()->id;
+    $keyword = $request->keyword;
+    if ($keyword != '') {
+        $posts = Giving::where('user_id', $currentuser)
+        ->where('purpose', 'like', '%'.$keyword.'%')
+        ->orwhere('date', 'like', '%'.$keyword.'%')
+        ->paginate(10); // ->get();
+    } else {
+        $posts = Giving::where('user_id', $currentuser)
+        ->paginate(10); // ->get();
+    }
+    return view('user.giving.index', ['posts' => $posts, 'keyword' => $keyword]);
   }
 
   public function edit(Request $request)
