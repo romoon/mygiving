@@ -24,7 +24,7 @@ class GivingController extends Controller
 
     $giving->fill($form)->save();
 
-    return redirect('user/giving/create');
+    return redirect('/user/giving/create');
   }
 
   public function index(Request $request)

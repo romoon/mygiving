@@ -20,14 +20,14 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 // User 認証不要
-Route::get('/', function () { return redirect('/home'); });
-Route::get('/index', function () { return view('index'); });
+Route::get('/', function () { return redirect('/index'); });
+Route::get('/index', function () { return view('/index'); });
 
 // User ログイン後
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('user/giving/create', 'User\GivingController@add')->name('user.giving.create');
-    Route::post('user/giving/create', 'User\GivingController@create')->name('user.giving.create');
+    Route::get('user/giving/create', 'User\GivingController@add');
+    Route::post('user/giving/create', 'User\GivingController@create');
 });
 
 // Admin 認証不要
