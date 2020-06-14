@@ -13,11 +13,8 @@ class Giving extends Model
   protected $guarded = array('id');
 
   public static $rules = array(
-      'giving' => [ 'required', 'integer' ],
-      'user_id' => [ 'required', 'string' ],
-      'date' => 'string',
-      'purpose' => 'string',
-
+      'giving' => 'required',
+      'user_id' => 'required',
   );
 
   public function user()
