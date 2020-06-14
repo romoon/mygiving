@@ -54,7 +54,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'nickname' => ['string', 'max:255'],
             'income' => ['double'],
-            'income' => ['integer'],
         ]);
     }
 
