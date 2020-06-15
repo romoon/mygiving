@@ -28,6 +28,10 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::get('user/giving/edit', 'User\GivingController@edit');
     Route::post('user/giving/edit', 'User\GivingController@update');
     Route::get('user/giving/delete', 'User\GivingController@delete');
+    Route::get('user/profile/edit', 'User\ProfileController@edit');
+    Route::post('user/profile/edit', 'User\ProfileController@update');
+    Route::get('user/profile/index', 'user\ProfileController@index');
+    Route::post('user/profile/index', 'user\ProfileController@index');
 });
 
 // Admin 認証不要
