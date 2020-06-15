@@ -44,17 +44,17 @@
                                     <td>{{ \Str::limit($giving->purpose, 100) }}</td>
                                     <td>
                                         <div>
-                                            <!-- {{-- action('User\GivingController@edit', ['id' => $giving->id]) --}} -->
-                                            <a href="" role="button" class="btn btn-outline-primary">編集</a>
-                                            <!-- {{-- action('User\GivingController@delete', ['id' => $giving->id]) --}} -->
-                                            <a href="" role="button" class="btn btn-outline-danger">削除</a>
+                                            <a href="{{ action('User\GivingController@edit', ['id' => $giving->id]) }}" role="button" class="btn btn-outline-primary">編集</a>
+                                            <a href="{{ action('User\GivingController@delete', ['id' => $giving->id]) }}" role="button" class="btn btn-outline-danger" onclick="return confirm('本当に削除しますか？')">削除</a>
                                         </div>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $posts->links() }}
+                </div>
+                <div class="row">
+                  {{ $posts->links() }}
                 </div>
             </div>
         </div>

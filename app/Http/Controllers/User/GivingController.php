@@ -36,9 +36,11 @@ class GivingController extends Controller
         $posts = Giving::where('user_id', $currentuser)
         ->where('purpose', 'like', '%'.$keyword.'%')
         ->orwhere('date', 'like', '%'.$keyword.'%')
+        ->latest('date')
         ->paginate(10); // ->get();
     } else {
         $posts = Giving::where('user_id', $currentuser)
+        ->latest('date')
         ->paginate(10); // ->get();
     }
     return view('user.giving.index', ['posts' => $posts, 'keyword' => $keyword]);
@@ -46,17 +48,31 @@ class GivingController extends Controller
 
   public function edit(Request $request)
   {
-
+      $giving = Giving::find($request->id);
+      if (empty($giving)) {
+        abort(404);
+      }
+      return view('user.giving.edit', ['giving_form' => $giving]);
   }
 
   public function update(Request $request)
   {
+      $this->validate($request, Giving::$rules);
+      $giving = Giving::find($request->id);
+      $giving_form = $request->all();
+      unset($giving_form['_token']);
 
+      $giving->fill($giving_form)->save();
+
+      return redirect('user/giving/index');
   }
 
   public function delete(Request $request)
   {
+      $giving = Giving::find($request->id);
+      $giving->delete();
 
+      return redirect('user/giving/index');
   }
 
 }
