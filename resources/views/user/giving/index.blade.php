@@ -60,9 +60,7 @@
         </div>
         <div class="row">
           <div class="col-md-10 mt-4">
-            <!-- {{ asset('user/giving/index') }} -->
             <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-success">Givingの一覧</a>
-            <!-- {{ asset('user/giving/create') }} -->
             <a href="{{ asset('user/giving/create') }}" role="button" class="btn btn-outline-success">Givingの新規作成</a>
             <!-- {{ asset('/user/profile/index') }} -->
             <a href="" role="button" class="btn btn-outline-success">マイページ</a>
