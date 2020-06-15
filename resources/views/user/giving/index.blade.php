@@ -44,25 +44,23 @@
                                     <td>{{ \Str::limit($giving->purpose, 100) }}</td>
                                     <td>
                                         <div>
-                                            <!-- {{-- action('User\GivingController@edit', ['id' => $giving->id]) --}} -->
-                                            <a href="" role="button" class="btn btn-outline-primary">編集</a>
-                                            <!-- {{-- action('User\GivingController@delete', ['id' => $giving->id]) --}} -->
-                                            <a href="" role="button" class="btn btn-outline-danger">削除</a>
+                                            <a href="{{ action('User\GivingController@edit', ['id' => $giving->id]) }}" role="button" class="btn btn-outline-primary">編集</a>
+                                            <a href="{{ action('User\GivingController@delete', ['id' => $giving->id]) }}" role="button" class="btn btn-outline-danger" onclick="return confirm('本当に削除しますか？')">削除</a>
                                         </div>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $posts->links() }}
+                </div>
+                <div class="row">
+                  {{ $posts->links() }}
                 </div>
             </div>
         </div>
         <div class="row">
           <div class="col-md-10 mt-4">
-            <!-- {{ asset('user/giving/index') }} -->
             <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-success">Givingの一覧</a>
-            <!-- {{ asset('user/giving/create') }} -->
             <a href="{{ asset('user/giving/create') }}" role="button" class="btn btn-outline-success">Givingの新規作成</a>
             <!-- {{ asset('/user/profile/index') }} -->
             <a href="" role="button" class="btn btn-outline-success">マイページ</a>
