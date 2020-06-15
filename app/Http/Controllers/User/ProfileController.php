@@ -20,8 +20,8 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
-        $this->validate($request, \Auth::user()::$rules);
-        $profile = \Auth::user();
+        $this->validate($request, User::$rules);
+        $profile = User::find($request->id);
         $profile_form = $request->all();
         unset($profile_form['_token']);
 
@@ -33,18 +33,19 @@ class ProfileController extends Controller
     public function index()
     {
         //  ログイン中のユーザーの、今年の、Givingの合計
-        $currentuser = \Auth::user();
+        $currentuser = \Auth::user()->id;
+        $userincome = \Auth::user()->income;
         $now = Carbon::now();
-        $usertotal = Giving::where('user_id', $currentuser->id)
+        $usertotal = Giving::where('user_id', $currentuser)
         ->whereYear('date', $now->year)
         ->sum('giving');
 
         //  ログイン中のユーザーの、今年の、Giving率
-        $givingrate = $usertotal / ($currentuser->income*10000)*100;
+        $givingrate = $usertotal / ($userincome*10000)*100;
 
         //  ログイン中のユーザーの、月ごとの、Givingの合計
         for ($i=1; $i<13; $i++) {
-            $monthgiving = Giving::where('user_id', $currentuser->id)
+            $monthgiving = Giving::where('user_id', $currentuser)
             ->whereYear('date', $now->year)
             ->whereMonth('date',$i)
             ->sum('giving');
@@ -55,7 +56,7 @@ class ProfileController extends Controller
         $monthtotal = json_encode($giving_l);
 
         // Givingからログイン中のユーザーのデータをdate順に並べる
-        $recentgivings = Giving::where('user_id', $currentuser->id)
+        $recentgivings = Giving::where('user_id', $currentuser)
         ->latest('date')
         ->get();
 
