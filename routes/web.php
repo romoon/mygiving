@@ -32,8 +32,6 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::post('user/profile/edit', 'User\ProfileController@update');
     Route::get('user/profile/index', 'user\ProfileController@index');
     Route::post('user/profile/index', 'user\ProfileController@index');
-    // Route::get('user/profile/index', 'user\ProfileController@sumgiving'); // givingの総和
-    // Route::post('user/profile/index', 'user\ProfileController@sumgiving'); // givingの総和
 });
 
 // Admin 認証不要
