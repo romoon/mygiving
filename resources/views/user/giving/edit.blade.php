@@ -39,13 +39,13 @@
                             <input type="hidden" name="id" value="{{ $giving_form->id }}">
                             <input type="hidden" name="user_id" value="{{ $giving_form->user_id }}">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="更新">
+                            <input type="submit" class="btn btn-rmngreen" value="更新">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-6">
-                          <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-success">Givingの一覧</a>
-                          <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-success">マイページ</a>
+                          <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-rmngreen">Givingの一覧</a>
+                          <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-rmngreen">マイページ</a>
                         </div>
                     </div>
                 </form>

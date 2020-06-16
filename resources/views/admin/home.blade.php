@@ -9,13 +9,14 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="alert alert-rmngreen" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
 
                     You are logged in!<br/>
-                    <a href="{{ asset('/index') }}" role="button" class="btn btn-success">MyGivingトップ</a>
+                    <a href="{{ asset('/admin/index') }}" role="button" class="btn btn-rmngreen">ユーザー一覧</a>
+                    <a href="{{ asset('/index') }}" role="button" class="btn btn-rmngreen">MyGivingトップ</a>
                 </div>
             </div>
         </div>

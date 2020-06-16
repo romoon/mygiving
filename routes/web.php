@@ -38,15 +38,18 @@ Route::group(['middleware' => 'auth:user'], function() {
 
 // Admin 認証不要
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/',         function () { return redirect('/admin/login'); });
+    Route::get('admin/', function () { return redirect('/admin/login'); });
     Route::get('/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Admin\LoginController@login')->name('admin.login');
 });
 
 // Admin ログイン後
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
-    Route::get('/logout', 'Admin\LoginController@logout')->name('admin.logout');
-    Route::post('/logout', 'Admin\LoginController@logout')->name('admin.logout');
-    Route::get('/home', 'Admin\HomeController@index')->name('admin.home');
+    Route::get('/', 'Admin\HomeController@index')->name('admin.index');
+    Route::get('/home', 'Admin\HomeController@index')->name('admin.index');
+    Route::get('/index', 'Admin\HomeController@index');
+    Route::get('admin/delete', 'Admin\HomeController@delete');
+    Route::get('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');
+    Route::post('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');
     // Route::post('/home', 'Admin\HomeController@index')->name('admin.home');
 });
