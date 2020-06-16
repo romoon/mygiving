@@ -15,7 +15,8 @@
                     @endif
 
                     You are logged in!<br/>
-                    <a href="{{ asset('/index') }}" role="button" class="btn btn-success">Front</a>
+                    <a href="{{ asset('/index') }}" role="button" class="btn btn-success">MyGivingトップ</a>
+                    <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-success">マイページ</a>
                 </div>
             </div>
         </div>
