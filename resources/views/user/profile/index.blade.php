@@ -67,8 +67,7 @@
         <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-success">Givingの一覧</a>
         <a href="{{ asset('user/giving/create') }}" role="button" class="btn btn-outline-success">Givingの新規作成</a>
         <a href="{{ action('User\ProfileController@edit') }}" role="button" class="btn btn-warning">ユーザー情報の編集</a>
-        <!-- asset('/index') -->
-        <a href="" role="button" class="btn btn-outline-success">MyGivingトップ</a>
+        <a href="{{ asset('/index') }}" role="button" class="btn btn-outline-success">MyGivingトップ</a>
       </div>
     </div>
   </div>
