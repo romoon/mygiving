@@ -37,7 +37,7 @@ class ProfileController extends Controller
         $userincome = \Auth::user()->income;
         $now = Carbon::now();
         $usertotal = Giving::where('user_id', $currentuser)
-        ->whereYear('date', $now->year)
+        ->whereYear('updated_at', $now->year)
         ->sum('giving');
 
         //  ログイン中のユーザーの、今年の、Giving率
@@ -46,8 +46,8 @@ class ProfileController extends Controller
         //  ログイン中のユーザーの、月ごとの、Givingの合計
         for ($i=1; $i<13; $i++) {
             $monthgiving = Giving::where('user_id', $currentuser)
-            ->whereYear('date', $now->year)
-            ->whereMonth('date',$i)
+            ->whereYear('updated_at', $now->year)
+            ->whereMonth('updated_at',$i)
             ->sum('giving');
 
             $pregiving_l[]= array('giving' => $monthgiving);
@@ -57,11 +57,11 @@ class ProfileController extends Controller
 
         // Givingからログイン中のユーザーのデータをdate順に並べる
         $recentgivings = Giving::where('user_id', $currentuser)
-        ->latest('date')
+        ->latest('updated_at')
         ->get();
 
         // Givingテーブルで、各ユーザーの今年の総Givingの合計を求め、大きい順に並べ替える
-        $usersums = Giving::whereyear('date', $now->year)
+        $usersums = Giving::whereyear('updated_at', $now->year)
         ->get()
         // ユーザーIDごとにGivingの合計を求める
         ->groupBy('user_id')
