@@ -22,7 +22,7 @@
         <!-- ランキングの表示 -->
         <?php $i=1 ?>
         @foreach($usersums as $value)
-          @if( $value['user_id'] == $currentuser->id )
+          @if( $value['user_id'] == $currentuser )
             @break
           @endif
         <?php $i++ ?>
@@ -69,8 +69,6 @@
         <a href="{{ action('User\ProfileController@edit') }}" role="button" class="btn btn-warning">ユーザー情報の編集</a>
         <!-- asset('/index') -->
         <a href="" role="button" class="btn btn-outline-success">MyGivingトップ</a>
-
-      <input type="button" value="ユーザー情報の編集" onClick="location.href='{{ action('User\ProfileController@edit') }}'">
       </div>
     </div>
   </div>
