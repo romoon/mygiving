@@ -16,10 +16,10 @@
     <div class="row">
       <!-- Left column  -->
       <div class="col-md-6">
+        <!-- ランキングの表示 -->
         <h2>今年のGiving率</h2>
         <h2>年収の約{{ \Str::limit($givingrate,4) }}％をGivingしています。</h2><br/>
         <h2>Givingランキング</h2>
-        <!-- ランキングの表示 -->
         <?php $i=1 ?>
         @foreach($usersums as $value)
           @if( $value['user_id'] == $currentuser )
