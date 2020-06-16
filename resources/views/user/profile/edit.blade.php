@@ -53,8 +53,8 @@
                             <input type="hidden" name="id" value="{{ $profile_form->id }}">
                             <input type="hidden" name="password" value="{{ $profile_form->password }}">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="更新">
-                            <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-success">マイページ</a>
+                            <input type="submit" class="btn btn-rmngreen" value="更新">
+                            <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-rmngreen">マイページ</a>
                         </div>
                     </div>
                 </form>

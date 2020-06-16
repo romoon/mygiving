@@ -6,10 +6,10 @@
     <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2>今年の総Giving</h2>
+            <h4>今年の総Giving</h4>
             <h2>{{ $thisyeargivings }}円</h2><br/>
           <hr style="border-top:3px double lightgray;">
-            <h2>これまでの総Giving</h2>
+            <h4>これまでの総Giving</h4>
             <h2>{{ $allgivings }}円</h2>
           </div>
         </div>
@@ -25,13 +25,13 @@
             <!-- Left column  -->
             <div class="col-md-6">
                 <div class="mt-4">
-                    <h2>今年の総Givingランキング</h2>
+                    <h2>今年の総Giving</br>ランキング</h2>
                     <table class="table">
                     <thead>
                         <tr>
                             <th width="20%">順位</th>
                             <th width="20%">ニックネーム</th>
-                            <th width="20%">Giving</th>
+                            <th width="20%">総Giving</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,13 +54,13 @@
                 <hr style="border-top:3px double lightgray;">
               </div>
               <div class="mt-4">
-                <h2>今年のGiving年収割合ランキング</h2>
+                <h2>今年のGiving</br>年収割合ランキング</h2>
                 <table class="table">
                 <thead>
                     <tr>
                         <th width="20%">順位</th>
                         <th width="20%">ニックネーム</th>
-                        <th width="20%">Givingの年収割合</th>
+                        <th width="20%">年収割合</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -117,9 +117,9 @@
                   <div class="col-md-10 mx-auto mt-3">
                     <a href="{{ route('login') }}" role="button" class="btn btn-primary">User Login</a>
                     <a href="{{ route('admin.login') }}" role="button" class="btn btn-danger">Admin Login</a>
-                    <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-success">マイページ</a>
-                    <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-success">Givingの一覧</a>
-                    <a href="{{ asset('user/giving/create') }}" role="button" class="btn btn-outline-success">Givingの新規作成</a>
+                    <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-rmngreen">マイページ</a>
+                    <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-rmngreen">Givingの一覧</a>
+                    <a href="{{ asset('user/giving/create') }}" role="button" class="btn btn-outline-rmngreen">Givingの新規作成</a>
                     <a href="{{ action('User\ProfileController@edit') }}" role="button" class="btn btn-warning">ユーザー情報の編集</a>
                 </div>
                 </div>
