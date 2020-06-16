@@ -17,8 +17,8 @@
                           </div>
                           <div class="col-md-4">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="検索">
-                            <a href="{{ action('User\GivingController@index', $keyword=null) }}"role="button" class="btn btn-outline-primary">リセット</a>
+                            <input type="submit" class="btn btn-rmngreen" value="検索">
+                            <a href="{{ action('User\GivingController@index', $keyword=null) }}" role="button" class="btn btn-outline-rmngreen">リセット</a>
                           </div>
                     </div>
                 </form>
@@ -44,7 +44,7 @@
                                     <td>{{ \Str::limit($giving->purpose, 100) }}</td>
                                     <td>
                                         <div>
-                                            <a href="{{ action('User\GivingController@edit', ['id' => $giving->id]) }}" role="button" class="btn btn-outline-primary">編集</a>
+                                            <a href="{{ action('User\GivingController@edit', ['id' => $giving->id]) }}" role="button" class="btn btn-outline-rmngreen">編集</a>
                                             <a href="{{ action('User\GivingController@delete', ['id' => $giving->id]) }}" role="button" class="btn btn-outline-danger" onclick="return confirm('本当に削除しますか？')">削除</a>
                                         </div>
                                     </td>
@@ -60,10 +60,9 @@
         </div>
         <div class="row">
           <div class="col-md-10 mt-4">
-            <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-success">Givingの一覧</a>
-            <a href="{{ asset('user/giving/create') }}" role="button" class="btn btn-outline-success">Givingの新規作成</a>
-            <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-success">マイページ</a>
-            <a href="{{ asset('/index') }}" role="button" class="btn btn-outline-success">MyGivingトップ</a>
+            <a href="{{ asset('user/giving/create') }}" role="button" class="btn btn-outline-rmngreen">Givingの新規作成</a>
+            <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-rmngreen">マイページ</a>
+            <a href="{{ asset('/index') }}" role="button" class="btn btn-outline-rmngreen">MyGivingトップ</a>
           </div>
         </div>
     </div>
