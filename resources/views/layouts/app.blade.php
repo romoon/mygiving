@@ -47,6 +47,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ asset('admin/index') }}">User一覧</a>
                                 <a class="dropdown-item" href="{{ route('admin.logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -65,6 +66,11 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ asset('/index') }}">MyGivingトップ</a>
+                                <a class="dropdown-item" href="{{ asset('user/profile/index') }}">マイページ</a>
+                                <a class="dropdown-item" href="{{ asset('user/giving/index') }}">Givingの一覧</a>
+                                <a class="dropdown-item" href="{{ asset('user/giving/create') }}">Givingの新規作成</a>
+                                <a class="dropdown-item" href="{{ action('User\ProfileController@edit') }}">ユーザー情報の編集</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -74,6 +80,7 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
+
                             </div>
                         </li>
                         @else
