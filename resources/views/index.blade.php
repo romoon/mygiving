@@ -4,28 +4,41 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h4>今年の総Giving</h4>
-            <h2>{{ $thisyeargivings }}円</h2><br/>
-          <hr style="border-top:3px double lightgray;">
-            <h4>これまでの総Giving</h4>
-            <h2>{{ $allgivings }}円</h2>
-          </div>
-        </div>
-        <hr style="border-top:3px double lightgray;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Give and Give!</h2>
-                <p>MyGiving-Pocketbookは</br>プレゼントや差し入れ、寄付など</br>人のために使ったお金を記録します。</p>
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+                <h1>Give and Give!</h1>
+                <p>MyGivingは、プレゼントや寄付など、人のために使ったお金を記録します。</p>
+                <hr style="border-top:3px double lightgray;">
             </div>
         </div>
-        <hr style="border-top:3px double lightgray;">
-        <div class="row">
+
+        <div class="row justify-content-center">
+          <div class="col-md-10 text-center">
+            <div class="mt-5">
+                <h4>今年の総Giving</h4>
+            </div>
+            <div class="mt-3">
+                <h2>{{ $thisyeargivings }}円</h2><br/>
+                <hr style="border-top:3px double lightgray;">
+            </div>
+            <div class="mt-5">
+                <h4>これまでの総Giving</h4>
+            </div>
+            <div class="mt-3">
+                <h2>{{ $allgivings }}円</h2>
+            </div>
+            <div class="mt-5">
+                <hr style="border-top:3px double lightgray;">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
             <!-- Left column  -->
-            <div class="col-md-6">
-                <div class="mt-4">
-                    <h2>今年の総Giving</br>ランキング</h2>
+            <div class="col-md-5">
+                <div class="mt-5">
+                    <h2>今年の総Givingランキング</h2>
+                </div>
+                <div class="mt-3">
                     <table class="table">
                     <thead>
                         <tr>
@@ -50,11 +63,13 @@
                     </tbody>
                     </table>
                 </div>
-                <div class="mt-4">
+                <div class="mt-5">
                 <hr style="border-top:3px double lightgray;">
               </div>
-              <div class="mt-4">
+              <div class="mt-5">
                 <h2>今年のGiving</br>年収割合ランキング</h2>
+              </div>
+              <div class="mt-3">
                 <table class="table">
                 <thead>
                     <tr>
@@ -81,9 +96,11 @@
                 </div>
             </div>
             <!-- Right column  -->
-            <div class="col-md-6">
-              <div class="mt-4">
+            <div class="col-md-5">
+              <div class="mt-5">
                 <h2>最近のGiving</h2>
+              </div>
+              <div class="mt-3">
                 <table class="table">
                     <thead>
                         <tr>
@@ -110,18 +127,14 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
                 <hr style="border-top:3px double lightgray;">
-                <div class="row">
-                  <div class="col-md-10 mx-auto mt-3">
+                  <div class="col-md-10 mx-auto mt-5">
                     <a href="{{ route('login') }}" role="button" class="btn btn-primary">User Login</a>
-                    <a href="{{ route('admin.login') }}" role="button" class="btn btn-danger">Admin Login</a>
                     <a href="{{ asset('user/profile/index') }}" role="button" class="btn btn-outline-rmngreen">マイページ</a>
                     <a href="{{ asset('user/giving/index') }}" role="button" class="btn btn-outline-rmngreen">Givingの一覧</a>
                     <a href="{{ asset('user/giving/create') }}" role="button" class="btn btn-outline-rmngreen">Givingの新規作成</a>
-                    <a href="{{ action('User\ProfileController@edit') }}" role="button" class="btn btn-warning">ユーザー情報の編集</a>
-                </div>
                 </div>
             </div>
         </div>
